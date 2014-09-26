@@ -6,7 +6,7 @@
 from version import __version__, __provides__
 #prefix = '/data/atlpan/bigpandamon'
 prefix = '/data/wenaus/bigpandamon'
-lib_prefix = 'lib/python2.6/site-packages/'
+lib_prefix = 'lib/python2.6/site-packages/'+'lsst/'
 expected_extensions = ['.html', '.js', '.css', '.png', '.gif', '.ico', '-example'] #FIXME
 src_ext = [ '.py' ]
 ignore_dir = [ '/.svn', '/.settings' ]
@@ -190,7 +190,7 @@ setup(
     ],
     data_files=[ #FIXME
                 # HTML templates and static files
-                ]
+                ] + gen_data_files('static')
     ,         
     cmdclass={'install': install_panda,
               'install_data': install_data_panda}
